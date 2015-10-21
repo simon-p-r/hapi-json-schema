@@ -9,6 +9,9 @@
   "scripts": {
     "test": "lab -a code -v -t 100 -L"
   },
+  "engines": {
+    "node": ">=4.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/simon-p-r/hapi-json-schema.git"
