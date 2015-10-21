@@ -4,7 +4,6 @@ var Code = require('code');
 var Hapi = require('hapi');
 var Lab = require('lab');
 var SchemaPlugin = require('../lib/index.js');
-var ZSchema = require('z-schema');
 
 // Fixtures
 var Formats = require('./fixtures/formats.js');
@@ -22,11 +21,9 @@ describe('Plugin', function () {
 
     var server;
     var Plugin;
-    var Validator;
 
     beforeEach(function (done) {
 
-        Validator = new ZSchema();
         server = new Hapi.Server();
         server.connection({
             port: 3000,
@@ -44,9 +41,7 @@ describe('Plugin', function () {
                 },
                 schema: {
                     formats: Formats
-                },
-                validator: Validator,
-                zSchema: ZSchema
+                }
             }
         };
         done();

@@ -28,3 +28,4 @@ These methods can be used by other plugins to dynamically load more internal sch
 
 + Improve interface to z-schema
 + Manage plugin dependencies better
++ Enable less options
