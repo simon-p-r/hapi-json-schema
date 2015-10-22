@@ -53,6 +53,7 @@ var record = {
     metaSchema: {
         description: 'example record',
         type: 'record',
+        base: 'exampleCollection',
         jsonSchema: 'v4',
         name: 'exampleRec',
         version: 1,
