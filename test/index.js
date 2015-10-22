@@ -38,9 +38,6 @@ describe('Plugin', function () {
                     options: {
 
                     }
-                },
-                schema: {
-                    formats: Formats
                 }
             }
         };
@@ -74,6 +71,8 @@ describe('Plugin', function () {
             expect(server.dataStore.schema.addSchemas).to.be.a.function();
             expect(server.dataStore.schema.addFormats).to.be.a.function();
             server.dataStore.schema.addSchemas(Schemas);
+            server.dataStore.schema.addFormats(Formats);
+
             server.start(function (err) {
 
                 expect(err).to.not.exist();
@@ -89,6 +88,7 @@ describe('Plugin', function () {
 
             expect(err).to.not.exist();
             server.dataStore.schema.addSchemas(Schemas);
+            server.dataStore.schema.addFormats(Formats);
             server.start(function (err) {
 
                 expect(err).to.not.exist();
