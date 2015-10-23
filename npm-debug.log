@@ -1,0 +1,99 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'publish' ]
+2 info using npm@2.14.7
+3 info using node@v4.2.1
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: 'D:\\Modules\\hapi-json-schema',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory C:\Users\Simon\AppData\Roaming\npm-cache\hapi-json-schema\0.0.4\package.tgz not in flight; packing
+9 verbose tar pack [ 'C:\\Users\\Simon\\AppData\\Roaming\\npm-cache\\hapi-json-schema\\0.0.4\\package.tgz',
+9 verbose tar pack   'D:\\Modules\\hapi-json-schema' ]
+10 verbose tarball C:\Users\Simon\AppData\Roaming\npm-cache\hapi-json-schema\0.0.4\package.tgz
+11 verbose folder D:\Modules\hapi-json-schema
+12 info prepublish hapi-json-schema@0.0.4
+13 verbose addLocalTarball adding from inside cache C:\Users\Simon\AppData\Roaming\npm-cache\hapi-json-schema\0.0.4\package.tgz
+14 silly cache afterAdd hapi-json-schema@0.0.4
+15 verbose afterAdd C:\Users\Simon\AppData\Roaming\npm-cache\hapi-json-schema\0.0.4\package\package.json not in flight; writing
+16 verbose afterAdd C:\Users\Simon\AppData\Roaming\npm-cache\hapi-json-schema\0.0.4\package\package.json written
+17 silly publish { name: 'hapi-json-schema',
+17 silly publish   version: '0.0.4',
+17 silly publish   description: 'json schema models for mongodb',
+17 silly publish   main: 'lib/index.js',
+17 silly publish   directories: { test: 'test' },
+17 silly publish   scripts: { test: 'lab -a code -v -t 100 -L' },
+17 silly publish   engines: { node: '>=4.0.0' },
+17 silly publish   repository:
+17 silly publish    { type: 'git',
+17 silly publish      url: 'git+ssh://git@github.com/simon-p-r/hapi-json-schema.git' },
+17 silly publish   keywords: [ 'json', 'schema', 'mongodb', 'models' ],
+17 silly publish   author: { name: 'simon-p-r' },
+17 silly publish   license: 'BSD-3-Clause',
+17 silly publish   bugs: { url: 'https://github.com/simon-p-r/hapi-json-schema/issues' },
+17 silly publish   homepage: 'https://github.com/simon-p-r/hapi-json-schema#readme',
+17 silly publish   devDependencies: { code: '^1.5.0', hapi: '^11.0.1', lab: '^6.2.0' },
+17 silly publish   dependencies: { 'json-schema-models': '0.0.9', 'z-schema': '^3.15.4' },
+17 silly publish   readme: '# hapi-json-schema [![build status](https://travis-ci.org/simon-p-r/hapi-json-schema.svg?branch=master)](https://travis-ci.org/simon-p-r/hapi-json-schema)\r\n\r\nHapi plugin for [json-schema-models](https://github.com/simon-p-r/json-schema-models)\r\n\r\n### Warning unstable api\r\n\r\n\r\noptions object must contain the following properties\r\n+ mongo\r\n   + name - mongodb name\r\n   + url - mongodb url string (host and port)\r\n   + options - mongodb connection options\r\n\r\n+ schema\r\n   + formats - an object with keys being name of format to register and value being the custom function to register for z-schema validation\r\n+ validator - an object created by z-schema constructor function\r\n+ zSchema - z-schema exported function\r\n\r\nPlugin exposes 2 methods\r\n\r\n##### addSchemas via server.dataStore.schema.addSchemas\r\n\r\n##### addFormats via server.dataStore.schema.addFormats\r\n\r\nThese methods can be used by other plugins to dynamically load more internal schema / models\r\n\r\n##### Todo\r\n\r\n+ Improve interface to z-schema\r\n+ Manage plugin dependencies better\r\n+ Enable less options\r\n',
+17 silly publish   readmeFilename: 'README.md',
+17 silly publish   gitHead: '59f052fcfb4c169e0002a840803a4122cf42e280',
+17 silly publish   _id: 'hapi-json-schema@0.0.4',
+17 silly publish   _shasum: 'a478e08a174d30db5fa19684bc179dcd4be28a12',
+17 silly publish   _from: '.' }
+18 verbose getPublishConfig undefined
+19 silly mapToRegistry name hapi-json-schema
+20 silly mapToRegistry using default registry
+21 silly mapToRegistry registry https://registry.npmjs.org/
+22 silly mapToRegistry uri https://registry.npmjs.org/hapi-json-schema
+23 verbose publish registryBase https://registry.npmjs.org/
+24 silly publish uploading C:\Users\Simon\AppData\Roaming\npm-cache\hapi-json-schema\0.0.4\package.tgz
+25 verbose request uri https://registry.npmjs.org/hapi-json-schema
+26 verbose request sending authorization for write operation
+27 info attempt registry request try #1 at 11:56:50 AM
+28 verbose request using bearer token for auth
+29 verbose request id 8d81389a366b0ace
+30 http request PUT https://registry.npmjs.org/hapi-json-schema
+31 http 403 https://registry.npmjs.org/hapi-json-schema
+32 verbose headers { 'content-type': 'application/json',
+32 verbose headers   'cache-control': 'max-age=60',
+32 verbose headers   'content-length': '95',
+32 verbose headers   'accept-ranges': 'bytes',
+32 verbose headers   date: 'Fri, 23 Oct 2015 10:56:52 GMT',
+32 verbose headers   via: '1.1 varnish',
+32 verbose headers   connection: 'keep-alive',
+32 verbose headers   'x-served-by': 'cache-lhr6333-LHR',
+32 verbose headers   'x-cache': 'MISS',
+32 verbose headers   'x-cache-hits': '0',
+32 verbose headers   'x-timer': 'S1445597811.128908,VS0,VE960' }
+33 verbose request invalidating C:\Users\Simon\AppData\Roaming\npm-cache\registry.npmjs.org\hapi-json-schema on PUT
+34 error publish Failed PUT 403
+35 verbose stack Error: "You cannot publish over the previously published version 0.0.4." : hapi-json-schema
+35 verbose stack     at makeError (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:264:12)
+35 verbose stack     at CachingRegistryClient.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:252:14)
+35 verbose stack     at Request._callback (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:172:14)
+35 verbose stack     at Request.self.callback (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:198:22)
+35 verbose stack     at emitTwo (events.js:87:13)
+35 verbose stack     at Request.emit (events.js:172:7)
+35 verbose stack     at Request.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1063:14)
+35 verbose stack     at emitOne (events.js:82:20)
+35 verbose stack     at Request.emit (events.js:169:7)
+35 verbose stack     at IncomingMessage.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1009:12)
+36 verbose statusCode 403
+37 verbose pkgid hapi-json-schema
+38 verbose cwd D:\Modules\hapi-json-schema
+39 error Windows_NT 6.3.9600
+40 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish"
+41 error node v4.2.1
+42 error npm  v2.14.7
+43 error code E403
+44 error "You cannot publish over the previously published version 0.0.4." : hapi-json-schema
+45 error If you need help, you may report this error at:
+45 error     <https://github.com/npm/npm/issues>
+46 verbose exit [ 1, true ]
