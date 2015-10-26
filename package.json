@@ -1,6 +1,6 @@
 {
   "name": "hapi-json-schema",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "json schema models for mongodb",
   "main": "lib/index.js",
   "directories": {
@@ -34,7 +34,7 @@
     "lab": "^6.2.0"
   },
   "dependencies": {
-    "json-schema-models": "0.0.9",
+    "json-schema-models": "^0.1.0",
     "z-schema": "^3.15.4"
   }
 }
