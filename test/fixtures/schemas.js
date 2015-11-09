@@ -1,31 +1,6 @@
 'use strict';
 
-var collection = {
-
-    metaSchema: {
-        description: 'example collection',
-        type: 'collection',
-        jsonSchema: 'v4',
-        name: 'exampleCollection',
-        version: 1
-    },
-    schema: {
-        type: 'object',
-        additionalProperties: false,
-        properties: {
-
-            someField: {
-                type: 'string',
-                maxLength: 50
-            },
-            '$ref.anotherField': 'exampleDefinition'
-        },
-        required: ['someField']
-    }
-};
-
-
-var definition = {
+const definition = {
 
     metaSchema: {
         description: 'example definition',
@@ -48,7 +23,7 @@ var definition = {
     }
 };
 
-var record = {
+const record = {
 
     metaSchema: {
         description: 'example record',
@@ -85,7 +60,6 @@ var record = {
 
 module.exports = [
 
-    collection,
     definition,
     record
 ];

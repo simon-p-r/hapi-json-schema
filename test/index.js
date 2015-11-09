@@ -1,28 +1,29 @@
 'use strict';
 
-var Code = require('code');
-var Hapi = require('hapi');
-var Lab = require('lab');
-var SchemaPlugin = require('../lib/index.js');
+const Code = require('code');
+const Hapi = require('hapi');
+const Lab = require('lab');
+const SchemaPlugin = require('../lib/index.js');
 
 // Fixtures
-var Formats = require('./fixtures/formats.js');
-var Schemas = require('./fixtures/schemas.js');
+const Collections = require('./fixtures/collections.js');
+const Formats = require('./fixtures/formats.js');
+const Schemas = require('./fixtures/schemas.js');
 
 // Set-up lab
-var lab = exports.lab = Lab.script();
-var describe = lab.describe;
-var it = lab.it;
-var beforeEach = lab.beforeEach;
-var expect = Code.expect;
+const lab = exports.lab = Lab.script();
+const describe = lab.describe;
+const it = lab.it;
+const beforeEach = lab.beforeEach;
+const expect = Code.expect;
 
 
-describe('Plugin', function () {
+describe('Plugin', () => {
 
-    var server;
-    var Plugin;
+    let server;
+    let Plugin;
 
-    beforeEach(function (done) {
+    beforeEach((done) => {
 
         server = new Hapi.Server();
         server.connection({
@@ -37,7 +38,8 @@ describe('Plugin', function () {
                     url: 'mongodb://localhost:27017',
                     options: {
 
-                    }
+                    },
+                    collections: Collections
                 }
             }
         };
@@ -45,13 +47,13 @@ describe('Plugin', function () {
     });
 
 
-    it('should fail to connect to mongodb due to invalid port', function (done) {
+    it('should fail to connect to mongodb due to invalid port', (done) => {
 
         Plugin.options.mongo.url = 'mongodb://localhost:27018';
-        server.register(Plugin, function (err) {
+        server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.start(function (err) {
+            server.start((err) => {
 
                 expect(err).to.exist();
                 server.stop(done);
@@ -61,9 +63,9 @@ describe('Plugin', function () {
 
     });
 
-    it('should connect to mongodb and decorate dataStore to server object', function (done) {
+    it('should connect to mongodb and decorate dataStore to server object', (done) => {
 
-        server.register(Plugin, function (err) {
+        server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
             expect(server.dataStore).to.be.an.object();
@@ -73,7 +75,7 @@ describe('Plugin', function () {
             server.dataStore.schema.addSchemas(Schemas);
             server.dataStore.schema.addFormats(Formats);
 
-            server.start(function (err) {
+            server.start((err) => {
 
                 expect(err).to.not.exist();
                 server.stop(done);
@@ -81,15 +83,15 @@ describe('Plugin', function () {
         });
     });
 
-    it('should run buildIndexes successfully when passed within options to plugin', function (done) {
+    it('should run buildIndexes successfully when passed within options to plugin', (done) => {
 
         Plugin.options.indexes = true;
-        server.register(Plugin, function (err) {
+        server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
             server.dataStore.schema.addSchemas(Schemas);
             server.dataStore.schema.addFormats(Formats);
-            server.start(function (err) {
+            server.start((err) => {
 
                 expect(err).to.not.exist();
                 server.stop(done);
