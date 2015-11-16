@@ -32,6 +32,7 @@ const record = {
         jsonSchema: 'v4',
         name: 'exampleRec',
         version: 1,
+        rids: ['test'],
         keys: [{
             name: 'sid',
             flds: {
