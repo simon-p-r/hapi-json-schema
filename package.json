@@ -38,6 +38,7 @@
     "basic-utils": "^1.0.0",
     "boom": "^3.0.0",
     "compact": "^0.1.2",
+    "hoek": "^3.0.4",
     "joi": "^7.0.0",
     "json-schema-models": "^0.4.2",
     "neo-async": "^1.7.0",
