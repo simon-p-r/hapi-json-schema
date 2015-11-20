@@ -2,19 +2,19 @@
 
 Hapi plugin for [json-schema-models](https://github.com/simon-p-r/json-schema-models)
 
-### Warning unstable api
 
 
 options object must contain the following properties
++ indexes - boolean to confirm whether indexes should be built or not
 + mongo
    + name - mongodb name
    + url - mongodb url string (host and port)
    + options - mongodb connection options
+   + collections - array of objects with following properties
+       + name - string name of collection
+       + indexes - array of indexes to create
+       + options - valid options object for mongodb driver createCollection method
 
-+ schema
-   + formats - an object with keys being name of format to register and value being the custom function to register for z-schema validation
-+ validator - an object created by z-schema constructor function
-+ zSchema - z-schema exported function
 
 Plugin exposes 2 methods
 
@@ -28,4 +28,3 @@ These methods can be used by other plugins to dynamically load more internal sch
 
 + Improve interface to z-schema
 + Manage plugin dependencies better
-+ Enable less options

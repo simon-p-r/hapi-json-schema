@@ -1,66 +1,110 @@
 'use strict';
 
-const definition = {
+
+const _id = {
 
     metaSchema: {
         description: 'example definition',
         type: 'definition',
         jsonSchema: 'v4',
-        name: 'exampleDefinition',
+        name: '_id',
+        version: 1
+    },
+    schema: {
+        type: 'string'
+    }
+};
+
+
+const recType = {
+
+    metaSchema: {
+        description: 'example definition',
+        type: 'definition',
+        jsonSchema: 'v4',
+        name: 'recType',
+        version: 1
+    },
+    schema: {
+        type: 'string'
+    }
+};
+
+
+const lookup = {
+
+    metaSchema: {
+        description: 'example definition',
+        type: 'definition',
+        jsonSchema: 'v4',
+        name: 'lookup',
         version: 1
     },
     schema: {
         type: 'object',
-        additionalProperties: false,
         properties: {
-
-            someOtherField: {
-                type: 'string',
-                maxLength: 50
+            value: {
+                type: 'string'
             }
         },
-        required: ['someOtherField']
+        required: ['value'],
+        additionalProperties: false
     }
 };
 
-const record = {
+const salutation = {
 
     metaSchema: {
         description: 'example record',
         type: 'record',
-        base: 'exampleCollection',
+        base: 'lookup',
         jsonSchema: 'v4',
-        name: 'exampleRec',
+        name: 'salutation',
         version: 1,
-        rids: ['test'],
-        keys: [{
-            name: 'sid',
-            flds: {
-                'test': 1
-            }
-        }]
+        rids: ['recType', 'lookup.value']
     },
     schema: {
         type: 'object',
         additionalProperties: false,
         properties: {
 
-            mainField: {
-                type: 'string',
-                maxLength: 50
-            },
-            test: {
-                type: 'string',
-                maxLength: 50,
-                format: 'key'
-            }
+            '$ref.recType': 'recType',
+            '$ref._id': '_id',
+            '$ref.lookup': 'lookup'
         },
-        required: ['mainField', 'test']
+        required: ['recType', 'lookup', '_id']
+    }
+};
+
+const locator = {
+
+    metaSchema: {
+        description: 'example record',
+        type: 'record',
+        base: 'lookup',
+        jsonSchema: 'v4',
+        name: 'locator',
+        version: 1,
+        rids: ['recType', 'lookup.value']
+    },
+    schema: {
+        type: 'object',
+        additionalProperties: false,
+        properties: {
+
+            '$ref.recType': 'recType',
+            '$ref._id': '_id',
+            '$ref.lookup': 'lookup'
+        },
+        required: ['recType', 'lookup', '_id']
     }
 };
 
 module.exports = [
 
-    definition,
-    record
+    _id,
+    locator,
+    lookup,
+    recType,
+    salutation
 ];
