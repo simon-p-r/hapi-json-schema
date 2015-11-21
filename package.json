@@ -1,6 +1,6 @@
 {
   "name": "hapi-json-schema",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "json schema models for mongodb",
   "main": "lib/index.js",
   "directories": {
@@ -8,7 +8,7 @@
   },
   "scripts": {
     "pretest": "mongo localhost:27017/hapi-json-schema ./scripts/mongo.js",
-    "test": "lab -a code -v -t 90-L"
+    "test": "lab -a code -v -t 100 -L"
   },
   "engines": {
     "node": ">=4.0.0"
@@ -40,8 +40,7 @@
     "compact": "^0.1.2",
     "hoek": "^3.0.4",
     "joi": "^7.0.0",
-    "json-schema-models": "^0.4.2",
-    "neo-async": "^1.7.0",
-    "z-schema": "^3.16.0"
+    "json-schema-models": "^0.5.0",
+    "neo-async": "^1.7.0"
   }
 }

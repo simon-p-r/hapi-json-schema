@@ -84,7 +84,7 @@ describe('Plugin', () => {
 
     it('should fail to connect to mongodb due to invalid port', (done) => {
 
-        delete Plugin.options.mongo.collections
+        delete Plugin.options.mongo.collections;
         server.register(Plugin, (err) => {
 
             expect(err).to.exist();
