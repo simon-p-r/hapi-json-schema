@@ -1,6 +1,6 @@
 {
   "name": "hapi-json-schema",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "json schema models for mongodb",
   "main": "lib/index.js",
   "directories": {
@@ -31,7 +31,7 @@
   "homepage": "https://github.com/simon-p-r/hapi-json-schema#readme",
   "devDependencies": {
     "code": "^2.0.1",
-    "hapi": "^11.1.0",
+    "hapi": "^11.1.2",
     "lab": "^7.3.0"
   },
   "dependencies": {

@@ -7,8 +7,6 @@ const SchemaPlugin = require('../lib/index.js');
 
 // Fixtures
 const Collections = require('./fixtures/collections.js');
-const Formats = require('./fixtures/formats.js');
-const Schemas = require('./fixtures/schemas.js');
 
 // Set-up lab
 const lab = exports.lab = Lab.script();
@@ -59,7 +57,9 @@ describe('Plugin', () => {
 
                     },
                     collections: Collections
-                }
+                },
+                schemata: '../test/fixtures/schemata',
+                formats: '../test/fixtures/formats.js'
             }
         };
         done();
@@ -109,8 +109,6 @@ describe('Plugin', () => {
             expect(server.dataStore.schema).to.be.an.object();
             expect(server.dataStore.schema.addSchemas).to.be.a.function();
             expect(server.dataStore.schema.addFormats).to.be.a.function();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
 
             server.start((err) => {
 
@@ -126,8 +124,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
             server.start((err) => {
 
                 expect(err).to.not.exist();
@@ -142,8 +138,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
             server.start((err) => {
 
                 expect(err).to.not.exist();
@@ -162,8 +156,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
             server.start((err) => {
 
                 expect(err).to.not.exist();
@@ -183,8 +175,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
             server.start((err) => {
 
                 expect(err).to.not.exist();
@@ -207,8 +197,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
             server.start((err) => {
 
                 expect(err).to.not.exist();
@@ -231,8 +219,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
             server.start((err) => {
 
                 expect(err).to.not.exist();
@@ -254,8 +240,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
             server.start((err) => {
 
                 expect(err).to.not.exist();
@@ -275,8 +259,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
             server.start((err) => {
 
                 expect(err).to.not.exist();
@@ -295,8 +277,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
             server.start((err) => {
 
                 expect(err).to.not.exist();
@@ -315,8 +295,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
             server.start((err) => {
 
                 expect(err).to.not.exist();
@@ -336,8 +314,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
             server.start((err) => {
 
                 expect(err).to.not.exist();
@@ -355,8 +331,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
             server.start((err) => {
 
                 expect(err).to.not.exist();
@@ -374,8 +348,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
             server.start((err) => {
 
                 expect(err).to.not.exist();
@@ -393,8 +365,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
             server.start((err) => {
 
                 expect(err).to.not.exist();
@@ -413,8 +383,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
             server.start((err) => {
 
                 expect(err).to.not.exist();
@@ -433,8 +401,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
             server.start((err) => {
 
                 expect(err).to.not.exist();
@@ -453,8 +419,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
             server.start((err) => {
 
                 expect(err).to.not.exist();
@@ -474,8 +438,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
             server.start((err) => {
 
                 expect(err).to.not.exist();
@@ -494,8 +456,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
             server.start((err) => {
 
                 expect(err).to.not.exist();
@@ -516,9 +476,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
-
             const request = {
                 method: 'DELETE',
                 url: '/ds/record/invalid/drop'
@@ -541,8 +498,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
 
             const request = {
                 method: 'DELETE',
@@ -567,9 +522,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
-
             const request = {
                 method: 'DELETE',
                 url: '/ds/record/invalid/55d464be70fb3d10131e8283'
@@ -593,9 +545,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
-
             const request = {
                 method: 'DELETE',
                 url: '/ds/record/salutation/id'
@@ -620,9 +569,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
-
             const request = {
                 method: 'DELETE',
                 url: '/ds/record/locator/address'
@@ -647,9 +593,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
-
             const request = {
                 method: 'DELETE',
                 url: '/ds/record/invalid'
@@ -673,9 +616,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
-
             const request = {
                 method: 'DELETE',
                 url: '/ds/record/salutation'
@@ -699,9 +639,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
-
             const request = {
                 method: 'DELETE',
                 url: '/ds/record/salutation?key=value'
@@ -726,9 +663,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
-
             const request = {
                 method: 'DELETE',
                 url: '/ds/record/locator?recType=locator'
@@ -754,9 +688,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
-
             const request = {
                 method: 'POST',
                 url: '/ds/record/invalid',
@@ -783,9 +714,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
-
             const request = {
                 method: 'POST',
                 url: '/ds/record/salutation',
@@ -812,9 +740,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
-
             const request = {
                 method: 'POST',
                 url: '/ds/record/salutation',
@@ -846,9 +771,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
-
             const request = {
                 method: 'PUT',
                 url: '/ds/record/invalid/id',
@@ -876,9 +798,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
-
             const request = {
                 method: 'PUT',
                 url: '/ds/record/salutation/id',
@@ -913,9 +832,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
-
             const request = {
                 method: 'PUT',
                 url: '/ds/record/salutation/id',
@@ -946,9 +862,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
-
             const request = {
                 method: 'PUT',
                 url: '/ds/record/salutation/dr',
@@ -979,9 +892,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
-
             const request = {
                 method: 'PATCH',
                 url: '/ds/record/invalid/id',
@@ -1010,9 +920,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
-
             const request = {
                 method: 'PATCH',
                 url: '/ds/record/salutation/id',
@@ -1043,9 +950,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
-
             const request = {
                 method: 'PATCH',
                 url: '/ds/record/salutation/id',
@@ -1075,9 +979,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
-
             const request = {
                 method: 'PATCH',
                 url: '/ds/record/salutation/id',
@@ -1106,9 +1007,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
-
             const request = {
                 method: 'PATCH',
                 url: '/ds/record/salutation/invalid',
@@ -1136,9 +1034,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
-
             const request = {
                 method: 'PATCH',
                 url: '/ds/record/salutation/dr',
@@ -1167,9 +1062,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
-
             const request = {
                 method: 'PATCH',
                 url: '/ds/record/salutation/dr',
@@ -1201,9 +1093,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
-
             const request = {
                 method: 'POST',
                 url: '/ds/record/invalid/batch',
@@ -1235,9 +1124,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
-
             const request = {
                 method: 'POST',
                 url: '/ds/record/salutation/batch',
@@ -1265,9 +1151,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
-
             const request = {
                 method: 'POST',
                 url: '/ds/record/salutation/batch',
@@ -1300,9 +1183,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
-
             const request = {
                 method: 'POST',
                 url: '/ds/record/salutation/batch',
@@ -1336,9 +1216,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
-
             const request = {
                 method: 'POST',
                 url: '/ds/record/salutation/batch',
@@ -1370,8 +1247,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
             server.start((err) => {
 
                 expect(err).to.not.exist();
@@ -1391,8 +1266,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
             server.start((err) => {
 
                 expect(err).to.not.exist();
@@ -1412,8 +1285,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
             server.start((err) => {
 
                 expect(err).to.not.exist();
@@ -1436,8 +1307,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
             server.start((err) => {
 
                 expect(err).to.not.exist();
@@ -1459,8 +1328,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
             server.start((err) => {
 
                 expect(err).to.not.exist();
@@ -1482,8 +1349,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
             server.start((err) => {
 
                 expect(err).to.not.exist();
@@ -1503,8 +1368,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
             server.start((err) => {
 
                 expect(err).to.not.exist();
@@ -1523,8 +1386,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
             server.start((err) => {
 
                 expect(err).to.not.exist();
@@ -1543,8 +1404,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
             server.start((err) => {
 
                 expect(err).to.not.exist();
@@ -1563,8 +1422,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
             server.start((err) => {
 
                 expect(err).to.not.exist();
@@ -1583,8 +1440,6 @@ describe('Plugin', () => {
         server.register(Plugin, (err) => {
 
             expect(err).to.not.exist();
-            server.dataStore.schema.addSchemas(Schemas);
-            server.dataStore.schema.addFormats(Formats);
             server.start((err) => {
 
                 expect(err).to.not.exist();

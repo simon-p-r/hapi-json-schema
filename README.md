@@ -14,7 +14,8 @@ options object must contain the following properties
        + name - string name of collection
        + indexes - array of indexes to create
        + options - valid options object for mongodb driver createCollection method
-
++ schemata - directory containing schemas
++ formats - path to formats file
 
 Plugin exposes 2 methods
 
