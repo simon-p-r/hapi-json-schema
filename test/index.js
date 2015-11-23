@@ -709,7 +709,7 @@ describe('Plugin', () => {
         });
     });
 
-    it('should fail post via ds/{record} endpoint due to invalid payload', (done) => {
+    it('should fail post via ds/record/{record} endpoint due to invalid payload', (done) => {
 
         server.register(Plugin, (err) => {
 
@@ -718,7 +718,11 @@ describe('Plugin', () => {
                 method: 'POST',
                 url: '/ds/record/salutation',
                 payload: {
-                    recType: 'salutation'
+                    recType: 'salutation',
+                    lookup: {
+                        value: 'invalid'
+                    },
+                    invalid: 'type'
                 }
             };
 
@@ -735,7 +739,39 @@ describe('Plugin', () => {
         });
     });
 
-    it('should successfully post via ds/{record} endpoint to create a new record', (done) => {
+    it('should fail post via ds/record/{record} endpoint due to invalid rid field', (done) => {
+
+        server.register(Plugin, (err) => {
+
+            expect(err).to.not.exist();
+            const request = {
+                method: 'POST',
+                url: '/ds/record/salutation',
+                payload: {
+                    recType: 'salutation',
+                    lookup: {
+                        value: 'invalid'
+                    }
+                }
+            };
+
+            server.start((err) => {
+
+                server.dataStore.schema.records.salutation.metaSchema.rids = ['recType', 'lookup'];
+                expect(err).to.not.exist();
+                server.inject(request, (res) => {
+
+                    expect(res.statusCode).to.equal(400);
+                    expect(res.result.message).to.contain('Unable to construct');
+                    server.dataStore.schema.records.salutation.metaSchema.rids = ['recType', 'lookup.value'];
+                    server.stop(done);
+
+                });
+            });
+        });
+    });
+
+    it('should successfully post via ds/record/{record} endpoint to create a new record', (done) => {
 
         server.register(Plugin, (err) => {
 
