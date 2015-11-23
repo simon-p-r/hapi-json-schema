@@ -58,8 +58,8 @@ describe('Plugin', () => {
                     },
                     collections: Collections
                 },
-                schemata: '../test/fixtures/schemata',
-                formats: '../test/fixtures/formats.js'
+                schemata: './fixtures/schemata',
+                formats: './fixtures/formats.js'
             }
         };
         done();
