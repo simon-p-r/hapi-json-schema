@@ -30,9 +30,6 @@ describe('Plugin', () => {
                     stripTrailingSlash: true
                 },
                 routes: {
-                    cache: {
-                        privacy: 'private'
-                    },
                     json: {
                         space: 4
                     },
@@ -162,7 +159,7 @@ describe('Plugin', () => {
                 server.inject('/ds/record/salutation', (res) => {
 
                     expect(res.statusCode).to.equal(200);
-                    // expect(res.result).to.be.an.array().and.have.length(3);
+                    expect(res.result).to.be.an.array().and.have.length(6);
                     server.stop(done);
 
                 });
@@ -181,7 +178,7 @@ describe('Plugin', () => {
                 server.inject('/ds/record/salutation/?not=lookup,control', (res) => {
 
                     expect(res.statusCode).to.equal(200);
-                    // expect(res.result).to.be.an.array().and.have.length(3);
+                    expect(res.result).to.be.an.array().and.have.length(6);
                     expect(res.result[0]._id).to.exist();
                     expect(res.result[0].recType).to.exist();
                     expect(res.result[0].control).to.not.exist();
@@ -203,7 +200,7 @@ describe('Plugin', () => {
                 server.inject('/ds/record/salutation/?return=_id,recType', (res) => {
 
                     expect(res.statusCode).to.equal(200);
-                    expect(res.result).to.be.an.array().and.have.length(11);
+                    expect(res.result).to.be.an.array().and.have.length(6);
                     expect(res.result[0]._id).to.exist();
                     expect(res.result[0].recType).to.exist();
                     expect(res.result[0].control).to.not.exist();
@@ -214,27 +211,6 @@ describe('Plugin', () => {
         });
     });
 
-    // it('should return an array of records from ds/record/{record} endpoint via a custom query', (done) => {
-    //
-    //     server.register(Plugin, (err) => {
-    //
-    //         expect(err).to.not.exist();
-    //         server.start((err) => {
-    //
-    //             expect(err).to.not.exist();
-    //             server.inject('/ds/record/salutation/?q=field1,field2', (res) => {
-    //
-    //                 expect(res.statusCode).to.equal(200);
-    //                 console.log('Custom query', res.result);
-    //                 expect(res.result).to.be.an.array().and.have.length(11);
-    //                 expect(res.result[0]._id).to.exist();
-    //                 expect(res.result[0].control).to.not.exist();
-    //                 server.stop(done);
-    //
-    //             });
-    //         });
-    //     });
-    // });
 
     it('should return an array of records from ds/record/{record} endpoint via a distinct query', (done) => {
 
@@ -244,11 +220,11 @@ describe('Plugin', () => {
             server.start((err) => {
 
                 expect(err).to.not.exist();
-                server.inject('/ds/record/salutation/?distinct=recType', (res) => {
+                server.inject('/ds/record/salutation/?distinct=lookup.value', (res) => {
 
                     expect(res.statusCode).to.equal(200);
-                    expect(res.result).to.be.an.array().and.have.length(2);
-                    expect(res.result).to.include(['salutation', 'locator']);
+                    expect(res.result).to.be.an.array().and.have.length(6);
+                    expect(res.result).to.include(['Mr', 'Mrs', 'Miss', 'Bishop', 'Father', 'Lady']);
                     server.stop(done);
                 });
             });
@@ -284,7 +260,7 @@ describe('Plugin', () => {
                 server.inject('/ds/record/salutation/count', (res) => {
 
                     expect(res.statusCode).to.equal(200);
-                    expect(res.result).to.equal(11);
+                    expect(res.result).to.equal(6);
                     server.stop(done);
                 });
             });
@@ -744,37 +720,6 @@ describe('Plugin', () => {
         });
     });
 
-    it('should fail post via ds/record/{record} endpoint due to invalid rid field', (done) => {
-
-        server.register(Plugin, (err) => {
-
-            expect(err).to.not.exist();
-            const request = {
-                method: 'POST',
-                url: '/ds/record/salutation',
-                payload: {
-                    recType: 'salutation',
-                    lookup: {
-                        value: 'invalid'
-                    }
-                }
-            };
-
-            server.start((err) => {
-
-                server.app.dataStore.records.salutation.meta.set('rids', ['invalid', 'keys']);
-                expect(err).to.not.exist();
-                server.inject(request, (res) => {
-
-                    expect(res.statusCode).to.equal(422);
-                    expect(res.result.message).to.contain('Cannot create id');
-                    server.app.dataStore.records.salutation.meta.set('rids', ['recType', 'lookup.value']);
-                    server.stop(done);
-
-                });
-            });
-        });
-    });
 
     it('should successfully post via ds/record/{record} endpoint to create a new record', (done) => {
 

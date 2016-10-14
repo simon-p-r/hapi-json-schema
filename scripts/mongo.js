@@ -1,6 +1,7 @@
 'use strict';
 print('Inserting records into mongo for tests');
 db.lookup.drop();
+db.lookup.remove({});
 
 var salutations = [{
     _id: 'salutation::mr',
@@ -9,69 +10,69 @@ var salutations = [{
     },
     recType: 'salutation'
 },
-    {
-        _id: 'salutation::mrs',
-        lookup: {
-            value: 'Mrs'
-        },
-        recType: 'salutation'
+{
+    _id: 'salutation::mrs',
+    lookup: {
+        value: 'Mrs'
     },
-    {
-        _id: 'salutation::miss',
-        lookup: {
-            value: 'Miss'
-        },
-        recType: 'salutation'
+    recType: 'salutation'
+},
+{
+    _id: 'salutation::miss',
+    lookup: {
+        value: 'Miss'
     },
-    {
-        _id: 'salutation::bishop',
-        lookup: {
-            value: 'Bishop'
-        },
-        recType: 'salutation'
+    recType: 'salutation'
+},
+{
+    _id: 'salutation::bishop',
+    lookup: {
+        value: 'Bishop'
     },
-    {
-        _id: 'salutation::father',
-        lookup: {
-            value: 'Father'
-        },
-        recType: 'salutation'
+    recType: 'salutation'
+},
+{
+    _id: 'salutation::father',
+    lookup: {
+        value: 'Father'
     },
-    {
-        _id: 'salutation::lady',
-        lookup: {
-            value: 'Lady'
-        },
-        recType: 'salutation'
+    recType: 'salutation'
+},
+{
+    _id: 'salutation::lady',
+    lookup: {
+        value: 'Lady'
     },
-    {
-        _id: 'salutation::father',
-        lookup: {
-            value: 'Father'
-        },
-        recType: 'salutation'
+    recType: 'salutation'
+},
+{
+    _id: 'salutation::father',
+    lookup: {
+        value: 'Father'
     },
-    {
-        _id: 'salutation::lady',
-        lookup: {
-            value: 'Lady'
-        },
-        recType: 'salutation'
+    recType: 'salutation'
+},
+{
+    _id: 'salutation::lady',
+    lookup: {
+        value: 'Lady'
     },
-    {
-        _id: 'salutation::father',
-        lookup: {
-            value: 'Father'
-        },
-        recType: 'salutation'
+    recType: 'salutation'
+},
+{
+    _id: 'salutation::father',
+    lookup: {
+        value: 'Father'
     },
-    {
-        _id: 'contacttype::lady',
-        lookup: {
-            value: 'Lady'
-        },
-        recType: 'salutation'
-    }];
+    recType: 'salutation'
+},
+{
+    _id: 'contacttype::lady',
+    lookup: {
+        value: 'Lady'
+    },
+    recType: 'salutation'
+}];
 
 db.lookup.insert(salutations);
 
@@ -80,35 +81,35 @@ var locators = [{
     lookup: {
         value: 'address'
     },
+recType: 'locator'
+},
+{
+    _id: 'locator::contact',
+    lookup: {
+        value: 'contact'
+    },
     recType: 'locator'
 },
-    {
-        _id: 'locator::contact',
-        lookup: {
-            value: 'contact'
-        },
-        recType: 'locator'
+{
+    _id: 'locator::email',
+    lookup: {
+        value: 'email'
     },
-    {
-        _id: 'locator::email',
-        lookup: {
-            value: 'email'
-        },
-        recType: 'locator'
+    recType: 'locator'
+},
+{
+    _id: 'locator::billing',
+    lookup: {
+        value: 'billing'
     },
-    {
-        _id: 'locator::billing',
-        lookup: {
-            value: 'billing'
-        },
-        recType: 'locator'
+    recType: 'locator'
+},
+{
+    _id: 'locator::phone',
+    lookup: {
+        value: 'phone'
     },
-    {
-        _id: 'locator::phone',
-        lookup: {
-            value: 'phone'
-        },
-        recType: 'locator'
-    }];
+    recType: 'locator'
+}];
 
 db.lookup.insert(locators);

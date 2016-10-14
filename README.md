@@ -1,4 +1,10 @@
-# hapi-json-schema [![build status](https://travis-ci.org/simon-p-r/hapi-json-schema.svg?branch=master)](https://travis-ci.org/simon-p-r/hapi-json-schema)
+# hapi-json-schema 
+[![build status](https://travis-ci.org/simon-p-r/hapi-json-schema.svg?branch=master)](https://travis-ci.org/simon-p-r/hapi-json-schema)
+[![Current Version](https://img.shields.io/npm/v/hapi-json-schema.svg?maxAge=1000)](https://www.npmjs.org/package/hapi-json-schema)
+[![dependency Status](https://img.shields.io/david/simon-p-r/hapi-json-schema.svg?maxAge=1000)](https://david-dm.org/simon-p-r/hapi-json-schema)
+[![devDependency Status](https://img.shields.io/david/dev/simon-p-r/hapi-json-schema.svg?maxAge=1000)](https://david-dm.org/simon-p-r/hapi-json-schema)
+[![Build Status](https://travis-ci.org/simon-p-r/hapi-json-schema.svg?branch=master)](https://travis-ci.org/simon-p-r/hapi-json-schema)
+[![Coveralls](https://img.shields.io/coveralls/simon-p-r/hapi-json-schema.svg?maxAge=1000)](https://coveralls.io/github/simon-p-r/hapi-json-schema)
 
 Hapi plugin for [json-schema-models](https://github.com/simon-p-r/json-schema-models)
 
