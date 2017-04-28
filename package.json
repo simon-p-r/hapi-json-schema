@@ -1,6 +1,6 @@
 {
   "name": "hapi-json-schema",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "description": "json schema models for mongodb",
   "main": "lib/index.js",
   "directories": {
@@ -32,16 +32,16 @@
   "homepage": "https://github.com/simon-p-r/hapi-json-schema#readme",
   "devDependencies": {
     "code": "^4.0.0",
-    "coveralls": "^2.11.14",
+    "coveralls": "^2.13.1",
     "hapi": "^16.1.1",
-    "lab": "^13.0.1"
+    "lab": "^13.0.2"
   },
   "dependencies": {
-    "basic-utils": "^1.7.0",
-    "boom": "^4.2.0",
+    "basic-utils": "^1.7.4",
+    "boom": "^4.3.1",
     "joi": "^10.4.1",
-    "json-schema-models": "^0.6.7",
-    "neo-async": "^2.0.1",
+    "json-schema-models": "^0.6.8",
+    "neo-async": "^2.1.0",
     "require-plus": "^2.1.2"
   }
 }
