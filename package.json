@@ -33,7 +33,7 @@
   "devDependencies": {
     "code": "^4.0.0",
     "coveralls": "^2.13.1",
-    "hapi": "^16.1.1",
+    "hapi": "^18.1.0",
     "lab": "^13.0.2"
   },
   "dependencies": {
